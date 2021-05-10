@@ -1,9 +1,17 @@
 <h1>Titulo 𝑺𝒂𝒏𝒅𝒓𝒂 𝑫𝒆 𝑻𝒆𝒏𝒂 ♡</h1>
 
 <ul class="menu">
-  <li><a href="/home">HOME</a></li>
-  <li><a href="/main">MAIN</a></li>
-  <li><a href="/contacto">CONTACTO</a></li>
+  <li><a [routerLink]="['/home']" routerLinkActive='activo'>HOME</a></li>
+  <!-- Dentro de ARRAY [], hay posiciones y estás posiciones determinan la url de dónde quiero ir -->
+  <li><a [routerLink]="['/info']" routerLinkActive='activo'>INFORMACIÓN</a></li>
+  <li><a [routerLink]="['/contacto']" routerLinkActive='activo'>CONTACTO</a></li>
 </ul>
 
 <router-outlet></router-outlet>
+
+<!-- Esto es para poder navegar pero después de pasar una acción. En este caso, onClick -->
+<div>
+  <button (click)="onClick('home')">HOME</button>
+  <button (click)="onClick('info')">Información</button>
+  <button (click)="onClick('contacto')">Contacto</button>
+</div>
